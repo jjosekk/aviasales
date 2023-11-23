@@ -1,0 +1,69 @@
+.filter {
+  width: 100%;
+  height: 252px;
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+  grid-area: 2 / 1 / 4 / 2;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 20px;
+  padding: 20px;
+
+  @media (max-width: 767px) {
+    height: auto;
+  }
+
+  &__list {
+    @media (max-width: 767px) {
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    height: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+
+    @media (max-width: 767px) {
+      text-align: center;
+    }
+  }
+
+  &__item {
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__input + label::before {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("./checkbox.svg");
+  }
+
+  &__input:checked + label::before {
+    background-image: url("./checkbox-checked.svg");
+  }
+
+  &__label {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+}
